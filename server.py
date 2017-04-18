@@ -28,8 +28,8 @@ class myHandler(BaseHTTPRequestHandler):
 			return None
 
 	def parallel_request(self,url):
-		CONSUMER_KEY = "oinVCsbl9qeXdNAQG3Uut5YOC"
-		CONSUMER_SECRET = "aegQKNZkyVf7UP20v24QQNVKBXnZXCSPCuHSKGafuXBwGvZGAg"
+		CONSUMER_KEY = ""
+		CONSUMER_SECRET = ""
 		if url == 'twitter':
 			auth = OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 			api = API(auth, timeout=1)
@@ -46,7 +46,7 @@ class myHandler(BaseHTTPRequestHandler):
 	def format_data(self, query):
 		total_urls = [
 			'http://api.duckduckgo.com/?q='+query+'&format=json',
-			'https://www.googleapis.com/customsearch/v1?key=AIzaSyBQcWOC2mlTkrFRnCTn_8hsREevDdT37yU&cx=010599593370841992410:btffvk1h6ge&q='+query,
+			'https://www.googleapis.com/customsearch/v1?key=AIz&cx=010:b&q='+query,
 			'twitter'
 		]
 		pool = ThreadPool(3)
